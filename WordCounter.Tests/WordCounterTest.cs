@@ -1,45 +1,31 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PingPong;
+using WordCounter;
+using System.Collections.Generic;
+using System;
 
-namespace PingPong.Tests
+namespace WordCounter.Tests
 {
   [TestClass]
-  public class PingPongGeneratorTest
+  public class RepeatCounterTest
   {
     [TestMethod]
-    public void ConvertToPingPong_NumberDivisibleByThree()
+    public void GetDescription_UserInput()
     {
-      PingPongGenerator testPingPong = new PingPongGenerator();
-      Assert.AreEqual("Ping", testPingPong.ConvertToPingPong(3));
+      //Arrange
+      string userInput = "hello";
+      RepeatCounter newRepeatCounter = new RepeatCounter(userInput);
+
+      //Act
+      string result = newRepeatCounter.GetUserInput();
+
+      Console.WriteLine(userInput);
+      Console.WriteLine(result);
+
+      //Assert
+      Assert.AreEqual(userInput, result);
+      Assert.AreEqual(true, false);
+
+
     }
-
-    [TestMethod]
-    public void ConvertToPingPong_NumberDivisibleByFive()
-    {
-      PingPongGenerator testPingPong = new PingPongGenerator();
-      Assert.AreEqual("Pong", testPingPong.ConvertToPingPong(5));
-    }
-
-    [TestMethod]
-    public void ConvertToPingPong_NumberDivisibleByThreeAndFive()
-    {
-      PingPongGenerator testPingPong = new PingPongGenerator();
-      Assert.AreEqual("PingPong", testPingPong.ConvertToPingPong(15));
-    }
-
-    [TestMethod]
-    public void ConvertToPingPong_NumberNotDivisiveByThreeOrFive()
-    {
-      PingPongGenerator testPingPong = new PingPongGenerator();
-      Assert.AreEqual("22", testPingPong.ConvertToPingPong(22));
-    }
-
-    // [TestMethod]
-    // public void PrintOutNumberList()
-    // {
-    //   PingPongCounter testPingPong = new PingPongCounter();
-    //
-    // }
-
   }
 }

@@ -1,45 +1,26 @@
+using System.Collections.Generic;
 using System;
 
-namespace PingPong
+namespace WordCounter
 {
-  public class PingPongGenerator
+  public class RepeatCounter
   {
-    public void Run()
+    private string _userInput;
+
+
+    public RepeatCounter (string userInput)
     {
-      Console.WriteLine("Please enter a number:");
-      string numberAsString = Console.ReadLine();
-      int number = int.Parse(numberAsString);
-      for(int i = 1; i <= number; i++)
-      {
-        string result = ConvertToPingPong(i);
-        Console.WriteLine(result);
-      }
+      _userInput = userInput;
+    }
+    // public void SetUserInput(string newUserInput)
+    // {
+    //   _userInput = newUserInput;
+    // }
+    public string GetUserInput()
+    {
+      return _userInput;
     }
 
-    public string ConvertToPingPong(int number)
-    {
-      if (number % 3 == 0 && number % 5 == 0)
-        {
-          return "PingPong";
-        }
-        else if (number % 3 == 0)
-        {
-          return "Ping";
-        }
-        else if (number % 5 == 0)
-        {
-          return "Pong";
-        }
-        return number.ToString();
-    }
   }
 
-  public class Program
-  {
-    public static void Main()
-    {
-      PingPongGenerator game = new PingPongGenerator();
-      game.Run();
-    }
-  }
 }
