@@ -9,23 +9,48 @@ namespace WordCounter.Tests
   public class RepeatCounterTest
   {
     [TestMethod]
-    public void GetDescription_UserInput()
+    public void GetInputWord_Return()
     {
       //Arrange
-      string userInput = "hello";
-      RepeatCounter newRepeatCounter = new RepeatCounter(userInput);
+      string inputWord = "hello";
+      string inputSentence = "hello world hello";
+      RepeatCounter newRepeatCounter = new RepeatCounter(inputWord, inputSentence);
 
       //Act
-      string result = newRepeatCounter.GetUserInput();
+      string resultWord = newRepeatCounter.GetInputWord();
+      string resultSentence = newRepeatCounter.GetInputSentence();
 
-      Console.WriteLine(userInput);
-      Console.WriteLine(result);
+      Console.WriteLine(inputWord);
+      Console.WriteLine(resultWord);
+      Console.WriteLine(inputSentence);
+      Console.WriteLine(resultSentence);
 
       //Assert
-      Assert.AreEqual(userInput, result);
-      Assert.AreEqual(true, false);
+      Assert.AreEqual(inputWord, resultWord);
+      // Assert.AreEqual(inputSentence, resultSentence);
 
-
+      // Assert.AreEqual(true, false);
     }
+    //
+    // [TestMethod]
+    // public void CountMatchingWords()
+    // {
+    //   //Arrange
+    //   string inputWord = "hello";
+    //   string inputSentence = "hello world hello"
+    //   int count = 2;
+    //   RepeatCounter newRepeatCounter = new RepeatCounter(inputWord);
+    //
+    //   //Act
+    //   string result = newRepeatCounter.GetInputWord();
+    //
+    //   Console.WriteLine(inputWord);
+    //   Console.WriteLine(result);
+    //
+    //   //Assert
+    //   Assert.AreEqual(result);
+    //   // Assert.AreEqual(true, false);
+    // }
+
   }
 }
