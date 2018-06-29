@@ -24,48 +24,40 @@ namespace WordCounter
     }
   //   public string[] InputSentenceToSplitArray()
   //   {
-  //     string[] temp = _inputSentence.Split(' ');
+  // //     string[] temp = _inputSentence.Split(' ');
+  //     return _inputSentence.Split(' ');
   //   }
   // }
     public int CountMatching()
     {
       int count = 0;
-      string[] temp = _inputSentence.Split(' ');
+      string[] temp = _inputSentence.ToLower().Split(' ');
       for(int i = 0; i < temp.Length; i++)
       {
         if (_inputWord == temp[i])
         {
           count++;
         }
-        
+
       }
       return count;
     }
 
-// public class Program
-//   {
-//     public static void Main()
-//     {
-//       Console.WriteLine("Enter a word");
-//       string inputWord = Console.ReadLine();
-//
-//        RepeatCounter inputWord = new RepeatCounter (Console.ReadLine(), "");
-//        Console.WriteLine(this.GetUserInputWord());
-//     }
-//   }
-// public class Program
-//  {
-//    public static void Main()
-//    {
-//      Console.WriteLine("Please enter a word:");
-//      string word = Console.ReadLine();
-//      Console.WriteLine("Please enter a sentence or list of words separate by space:");
-//      string sentence = Console.ReadLine();
-//      RepeatCounter repeatCounter = new RepeatCounter(word);
-//      int count = repeatCounter.CountWordFrequency(sentence);
-//      Console.WriteLine("The word " + word + " appears " + count + " times.");
-//    }
+  public class Program
+    {
+      public static void Main()
+      {
+        Console.WriteLine("Enter a word");
+        string inputWord = Console.ReadLine();
+        Console.WriteLine("Enter a sentence or list of words");
+        string inputSentence = Console.ReadLine();
+
+        RepeatCounter newRepeatCounter = new RepeatCounter(inputWord, inputSentence);
+
+        int count = newRepeatCounter.CountMatching();
+
+        Console.WriteLine("The word *" + inputWord + "*" + " was entered " + count + " times");
+      }
+    }
  }
-
-
 }

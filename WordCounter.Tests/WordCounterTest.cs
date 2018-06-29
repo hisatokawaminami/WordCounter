@@ -67,7 +67,27 @@ namespace WordCounter.Tests
 
       //Assert
       Assert.AreEqual(count, expected);
-      Assert.AreEqual(true, false);
+      // Assert.AreEqual(true, false);
     }
+
+    [TestMethod]
+    public void CountMatching_CaseInsensitive()
+    {
+      //Arrange
+      string inputWord = "hello";
+      string inputSentence = "HelLo world hellO";
+      RepeatCounter newRepeatCounter = new RepeatCounter(inputWord, inputSentence);
+
+      //Act
+      int count = newRepeatCounter.CountMatching();
+      int expected = 2;
+
+      Console.WriteLine(count);
+
+      //Assert
+      Assert.AreEqual(count, expected);
+      // Assert.AreEqual(true, false);
+    }
+
   }
 }
