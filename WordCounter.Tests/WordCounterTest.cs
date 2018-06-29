@@ -27,30 +27,47 @@ namespace WordCounter.Tests
 
       //Assert
       Assert.AreEqual(inputWord, resultWord);
-      // Assert.AreEqual(inputSentence, resultSentence);
+      Assert.AreEqual(inputSentence, resultSentence);
 
       // Assert.AreEqual(true, false);
     }
-    //
+
     // [TestMethod]
-    // public void CountMatchingWords()
+    // public void InputSentenceToSplitArray_True()
     // {
     //   //Arrange
-    //   string inputWord = "hello";
-    //   string inputSentence = "hello world hello"
-    //   int count = 2;
-    //   RepeatCounter newRepeatCounter = new RepeatCounter(inputWord);
+    //   string inputSentence = "hello world hello";
+    //   RepeatCounter newRepeatCounter = new RepeatCounter("", inputSentence);
     //
     //   //Act
-    //   string result = newRepeatCounter.GetInputWord();
-    //
-    //   Console.WriteLine(inputWord);
-    //   Console.WriteLine(result);
+    //   string[] result = newRepeatCounter.InputSentenceToSplitArray();
+    //   string[] expected = {"hello", "world", "hello"};
+    //   // Console.WriteLine(inputSentence);
+    //   // Console.WriteLine(result);
     //
     //   //Assert
-    //   Assert.AreEqual(result);
+    //   Assert.AreEqual(result, expected);
     //   // Assert.AreEqual(true, false);
     // }
 
+
+    [TestMethod]
+    public void CountMatching_True()
+    {
+      //Arrange
+      string inputWord = "hello";
+      string inputSentence = "hello world hello";
+      RepeatCounter newRepeatCounter = new RepeatCounter(inputWord, inputSentence);
+
+      //Act
+      int count = newRepeatCounter.CountMatching();
+      int expected = 2;
+
+      Console.WriteLine(count);
+
+      //Assert
+      Assert.AreEqual(count, expected);
+      Assert.AreEqual(true, false);
+    }
   }
 }

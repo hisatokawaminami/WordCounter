@@ -22,8 +22,25 @@ namespace WordCounter
     {
       return _inputSentence;
     }
-
-  }
+  //   public string[] InputSentenceToSplitArray()
+  //   {
+  //     string[] temp = _inputSentence.Split(' ');
+  //   }
+  // }
+    public int CountMatching()
+    {
+      int count = 0;
+      string[] temp = _inputSentence.Split(' ');
+      for(int i = 0; i < temp.Length; i++)
+      {
+        if (_inputWord == temp[i])
+        {
+          count++;
+        }
+        
+      }
+      return count;
+    }
 
 // public class Program
 //   {
@@ -48,7 +65,7 @@ namespace WordCounter
 //      int count = repeatCounter.CountWordFrequency(sentence);
 //      Console.WriteLine("The word " + word + " appears " + count + " times.");
 //    }
-//  }
+ }
 
 
 }
